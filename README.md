@@ -1,4 +1,8 @@
 # CNC Agentic Prototype
+<<<<<<< HEAD
+=======
+
+>>>>>>> d4e09800ad29894336bc30a199954ee781762d9c
 ### Agentic AI-Based Natural Language Interface for CNC Machining and Intelligent Machine Control
 
 ## 1. Project Overview
@@ -73,7 +77,11 @@ The architecture distinguishes between LLM-based instruction interpretation and 
 | CNC Control | LinuxCNC |
 | Robotics Integration | ROS 2 |
 | Testing | Pytest |
+<<<<<<< HEAD
 | Version Control | Git / GitLab |
+=======
+| Version Control | Git / GitLab / GitHub |
+>>>>>>> d4e09800ad29894336bc30a199954ee781762d9c
 
 ## 5. Current Implementation
 
@@ -123,7 +131,11 @@ Further development will focus on improving system integration and machine-state
 
 ### 5.5 ROS 2 Integration
 
+<<<<<<< HEAD
 The project is also being extended towards integration with robotic systems using ROS 2.
+=======
+The project is being extended towards integration with robotic systems using ROS 2.
+>>>>>>> d4e09800ad29894336bc30a199954ee781762d9c
 
 The objective is to explore communication between the intelligent command-processing architecture and robotic control systems, enabling further development towards intelligent and interconnected manufacturing environments.
 
@@ -133,23 +145,35 @@ The objective is to explore communication between the intelligent command-proces
 cnc-agentic-prototype/
 │
 ├── G_code_generator/
+<<<<<<< HEAD
 │
 ├── tests/
 │
+=======
+├── tests/
+>>>>>>> d4e09800ad29894336bc30a199954ee781762d9c
 ├── tools/
 │   ├── diagram.py
 │   └── measure_parameter.py
 │
 ├── figure_1_architecture.*
+<<<<<<< HEAD
 │
 ├── main.py
 │
+=======
+├── main.py
+>>>>>>> d4e09800ad29894336bc30a199954ee781762d9c
 ├── requirements.txt
 ├── .gitignore
 └── README.md
 ```
 
+<<<<<<< HEAD
 *Note: The repository structure is subject to change as development progresses.*
+=======
+*The repository structure is subject to change as development progresses.*
+>>>>>>> d4e09800ad29894336bc30a199954ee781762d9c
 
 ## 7. Installation and Setup
 
@@ -163,8 +187,12 @@ cnc-agentic-prototype/
 ### Clone the Repository
 
 ```bash
+<<<<<<< HEAD
 git clone git@gitlab.com:SagnikMitra023/cnc-agentic-prototype.git
 
+=======
+git clone git@github.com:YOUR_USERNAME/cnc-agentic-prototype.git
+>>>>>>> d4e09800ad29894336bc30a199954ee781762d9c
 cd cnc-agentic-prototype
 ```
 
@@ -174,8 +202,11 @@ cd cnc-agentic-prototype
 python -m venv .venv
 ```
 
+<<<<<<< HEAD
 Activate the environment:
 
+=======
+>>>>>>> d4e09800ad29894336bc30a199954ee781762d9c
 **Windows (Git Bash):**
 
 ```bash
@@ -196,13 +227,20 @@ pip install -r requirements.txt
 
 ### Configure Ollama
 
+<<<<<<< HEAD
 Pull the required language model:
 
+=======
+>>>>>>> d4e09800ad29894336bc30a199954ee781762d9c
 ```bash
 ollama pull llama3.2:3b
 ```
 
+<<<<<<< HEAD
 Ensure that Ollama is running before starting the application.
+=======
+Ensure Ollama is running before starting the application.
+>>>>>>> d4e09800ad29894336bc30a199954ee781762d9c
 
 ### Run the Prototype
 
@@ -210,7 +248,11 @@ Ensure that Ollama is running before starting the application.
 python main.py
 ```
 
+<<<<<<< HEAD
 *The execution instructions may need adjustment as the project entry point and environment configuration evolve.*
+=======
+*Execution instructions may require adjustment as the project entry point and environment configuration evolve.*
+>>>>>>> d4e09800ad29894336bc30a199954ee781762d9c
 
 ## 8. Testing
 
@@ -222,7 +264,11 @@ Run the test suite using:
 pytest -v
 ```
 
+<<<<<<< HEAD
 LinuxCNC simulation testing is performed separately to evaluate the generated G-code and its execution behaviour.
+=======
+LinuxCNC simulation testing is performed separately to evaluate generated G-code and its execution behaviour.
+>>>>>>> d4e09800ad29894336bc30a199954ee781762d9c
 
 ## 9. Development Roadmap
 
@@ -242,8 +288,11 @@ LinuxCNC simulation testing is performed separately to evaluate the generated G-
 
 ## 10. Future Research Directions
 
+<<<<<<< HEAD
 Potential research and development directions include:
 
+=======
+>>>>>>> d4e09800ad29894336bc30a199954ee781762d9c
 - Agentic AI for intelligent manufacturing.
 - Context-aware machining instruction interpretation.
 - AI-assisted process planning and optimization.
@@ -256,7 +305,11 @@ Potential research and development directions include:
 
 This project is an experimental research prototype.
 
+<<<<<<< HEAD
 Generated machine instructions undergo deterministic validation and human approval before execution. However, simulation testing alone does not establish physical machine safety.
+=======
+Generated machine instructions undergo deterministic validation and human approval before execution. Simulation testing alone does not establish physical machine safety.
+>>>>>>> d4e09800ad29894336bc30a199954ee781762d9c
 
 Physical deployment requires additional validation, machine-specific safety interlocks, collision checking, emergency-stop provisions, and controlled commissioning.
 
@@ -272,8 +325,16 @@ The prototype is currently undergoing LinuxCNC simulation testing, with further 
 
 Production Engineering | AI/ML | Robotics | Intelligent Manufacturing
 
+<<<<<<< HEAD
 GitLab: [SagnikMitra023](https://gitlab.com/SagnikMitra023)
 
 ---
 
 *This repository documents an ongoing engineering and research project exploring the convergence of Agentic AI, CNC machining, robotics, and intelligent manufacturing.*
+=======
+
+
+---
+
+*This repository documents an ongoing engineering and research project exploring the convergence of Agentic AI, CNC machining, robotics, and intelligent manufacturing.*
+>>>>>>> d4e09800ad29894336bc30a199954ee781762d9c
