@@ -1,0 +1,22 @@
+{
+  "n": 21,
+  "latency_ms": {
+    "p50": 5421,
+    "p95": 6636,
+    "max": 7676
+  },
+  "per_field_accuracy": {
+    "actions": 0.9048,
+    "x": 0.9524,
+    "y": 1.0,
+    "z": 0.9524,
+    "spindle_speed": 0.9524,
+    "feed_rate": 0.9524,
+    "spindle_direction": 1.0
+  },
+  "action": {
+    "precision": 0.913,
+    "recall": 0.955,
+    "f1": 0.933
+  }
+}
