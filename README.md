@@ -1,8 +1,5 @@
 # CNC Agentic Prototype
-<<<<<<< HEAD
-=======
 
->>>>>>> d4e09800ad29894336bc30a199954ee781762d9c
 ### Agentic AI-Based Natural Language Interface for CNC Machining and Intelligent Machine Control
 
 ## 1. Project Overview
