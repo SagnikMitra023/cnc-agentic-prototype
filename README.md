@@ -1,93 +1,279 @@
-# CNC AGENTIC PROTOTYPE
+# CNC Agentic Prototype
+### Agentic AI-Based Natural Language Interface for CNC Machining and Intelligent Machine Control
 
+## 1. Project Overview
 
+The CNC Agentic Prototype is an intelligent manufacturing project focused on developing an AI-driven interface for interpreting natural-language machining instructions and translating them into structured machine-control commands.
 
-## Getting started
+The system integrates Large Language Models (LLMs), agentic workflows, deterministic command validation, and CNC control technologies to establish an intuitive yet controlled interaction between human operators and CNC machinery.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+Developed using Python and LangGraph, the architecture separates probabilistic language interpretation from deterministic command validation and G-code generation. A Human-in-the-Loop (HITL) mechanism ensures that generated machining commands undergo approval before execution.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+The current development focuses on LinuxCNC simulation testing, with further integration into robotic systems through ROS 2.
 
-## Add your files
+## 2. Project Objectives
 
-* [Create](https://docs.gitlab.com/user/project/repository/web_editor/#create-a-file) or [upload](https://docs.gitlab.com/user/project/repository/web_editor/#upload-a-file) files
-* [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+- Develop an intelligent natural-language interface for CNC machining.
+- Translate operator instructions into structured machining commands.
+- Implement agentic workflows for instruction interpretation and state management.
+- Ensure deterministic command validation and controlled G-code generation.
+- Incorporate Human-in-the-Loop approval for machine operations.
+- Evaluate generated G-code through LinuxCNC simulation.
+- Explore integration with robotic systems and intelligent manufacturing environments.
 
+## 3. System Architecture
+
+The proposed architecture follows a modular workflow:
+
+```text
+           Operator Input
+                 |
+                 v
+     Natural Language Interface
+                 |
+                 v
+        LangGraph Agentic
+             Workflow
+                 |
+                 v
+      Instruction Interpretation
+                 |
+                 v
+       Structured Command Model
+                 |
+                 v
+       Deterministic Validation
+                 |
+                 v
+       Human Approval Interface
+                 |
+                 v
+         G-code Generation
+                 |
+                 v
+          LinuxCNC Interface
+                 |
+                 v
+        CNC Simulation Testing
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/SagnikMitra023/cnc-agentic-prototype.git
-git branch -M main
-git push -uf origin main
+
+The architecture distinguishes between LLM-based instruction interpretation and deterministic machine-control logic to improve predictability and control.
+
+## 4. Technology Stack
+
+| Component | Technology |
+|---|---|
+| Programming Language | Python 3.13 |
+| Agentic Framework | LangGraph |
+| Large Language Model | Ollama – Llama 3.2 (3B) |
+| Data Validation | Pydantic |
+| Workflow Management | LangGraph StateGraph |
+| User Interface | Tkinter |
+| Visualization | Matplotlib |
+| CNC Control | LinuxCNC |
+| Robotics Integration | ROS 2 |
+| Testing | Pytest |
+| Version Control | Git / GitLab |
+
+## 5. Current Implementation
+
+### 5.1 Agentic Workflow
+
+- LangGraph-based workflow for managing instruction-processing stages.
+- State management for maintaining command execution context.
+- LLM-based interpretation of natural-language machining instructions.
+- Structured command generation.
+
+### 5.2 Command Validation and Control
+
+- Pydantic-based structured command representation.
+- Deterministic validation of generated machine instructions.
+- Configurable operating limits for X, Y and Z axes.
+- Feed-rate and spindle-speed constraints.
+- Human approval mechanism before command execution.
+- Field-aware validation to prevent unsupported command parameters.
+
+### 5.3 G-code Generation
+
+The prototype generates structured G-code from validated machining instructions.
+
+Currently supported operations include:
+
+| Command | Function |
+|---|---|
+| MOVE | Linear axis movement |
+| FEED_MOVE | Movement with specified feed rate |
+| SPINDLE_ON | Spindle activation |
+| SPINDLE_OFF | Spindle deactivation |
+
+The current implementation focuses on basic linear movements and spindle control.
+
+### 5.4 LinuxCNC Simulation Testing
+
+Generated G-code is being tested within the LinuxCNC simulation environment.
+
+The testing phase focuses on:
+
+- G-code compatibility.
+- Command execution behaviour.
+- Validation of generated machine instructions.
+- Evaluating the interface between the AI-based command-generation workflow and CNC control software.
+
+Further development will focus on improving system integration and machine-state feedback.
+
+### 5.5 ROS 2 Integration
+
+The project is also being extended towards integration with robotic systems using ROS 2.
+
+The objective is to explore communication between the intelligent command-processing architecture and robotic control systems, enabling further development towards intelligent and interconnected manufacturing environments.
+
+## 6. Repository Structure
+
+```text
+cnc-agentic-prototype/
+│
+├── G_code_generator/
+│
+├── tests/
+│
+├── tools/
+│   ├── diagram.py
+│   └── measure_parameter.py
+│
+├── figure_1_architecture.*
+│
+├── main.py
+│
+├── requirements.txt
+├── .gitignore
+└── README.md
 ```
 
-## Integrate with your tools
+*Note: The repository structure is subject to change as development progresses.*
 
-* [Set up project integrations](https://gitlab.com/SagnikMitra023/cnc-agentic-prototype/-/settings/integrations)
+## 7. Installation and Setup
 
-## Collaborate with your team
+### Prerequisites
 
-* [Invite team members and collaborators](https://docs.gitlab.com/user/project/members/)
-* [Create a new merge request](https://docs.gitlab.com/user/project/merge_requests/creating_merge_requests/)
-* [Automatically close issues from merge requests](https://docs.gitlab.com/user/project/issues/managing_issues/#closing-issues-automatically)
-* [Enable merge request approvals](https://docs.gitlab.com/user/project/merge_requests/approvals/)
-* [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+- Python 3.13
+- Git
+- Ollama
+- LinuxCNC for simulation testing
 
-## Test and Deploy
+### Clone the Repository
 
-Use the built-in continuous integration in GitLab.
+```bash
+git clone git@gitlab.com:SagnikMitra023/cnc-agentic-prototype.git
 
-* [Get started with GitLab CI/CD](https://docs.gitlab.com/ci/quick_start/)
-* [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/user/application_security/sast/)
-* [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/topics/autodevops/requirements/)
-* [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/user/clusters/agent/)
-* [Set up protected environments](https://docs.gitlab.com/ci/environments/protected_environments/)
+cd cnc-agentic-prototype
+```
 
-***
+### Create a Virtual Environment
 
-# Editing this README
+```bash
+python -m venv .venv
+```
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+Activate the environment:
 
-## Suggestions for a good README
+**Windows (Git Bash):**
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+```bash
+source .venv/Scripts/activate
+```
 
-## Name
-Choose a self-explaining name for your project.
+**Linux:**
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+```bash
+source .venv/bin/activate
+```
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+### Install Dependencies
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+```bash
+pip install -r requirements.txt
+```
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+### Configure Ollama
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+Pull the required language model:
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+```bash
+ollama pull llama3.2:3b
+```
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+Ensure that Ollama is running before starting the application.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+### Run the Prototype
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+```bash
+python main.py
+```
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+*The execution instructions may need adjustment as the project entry point and environment configuration evolve.*
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+## 8. Testing
 
-## License
-For open source projects, say how it is licensed.
+The project uses Pytest for testing individual components.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Run the test suite using:
+
+```bash
+pytest -v
+```
+
+LinuxCNC simulation testing is performed separately to evaluate the generated G-code and its execution behaviour.
+
+## 9. Development Roadmap
+
+- [x] Initial LangGraph agentic workflow.
+- [x] Natural-language instruction interpretation.
+- [x] Structured command representation.
+- [x] Deterministic command validation.
+- [x] Human-in-the-Loop approval mechanism.
+- [x] Basic G-code generation.
+- [x] Initial LinuxCNC simulation testing.
+- [ ] Expanded G-code operation support.
+- [ ] Improved CNC integration and machine-state feedback.
+- [ ] ROS 2 integration with robotic systems.
+- [ ] Advanced machining process validation.
+- [ ] Digital-twin-based simulation and monitoring.
+- [ ] Closed-loop intelligent manufacturing control.
+
+## 10. Future Research Directions
+
+Potential research and development directions include:
+
+- Agentic AI for intelligent manufacturing.
+- Context-aware machining instruction interpretation.
+- AI-assisted process planning and optimization.
+- Integration of CNC and robotic control systems.
+- Digital twins for manufacturing process simulation.
+- Intelligent machine monitoring and feedback.
+- Human-machine collaboration in Industry 4.0 environments.
+
+## 11. Safety Considerations
+
+This project is an experimental research prototype.
+
+Generated machine instructions undergo deterministic validation and human approval before execution. However, simulation testing alone does not establish physical machine safety.
+
+Physical deployment requires additional validation, machine-specific safety interlocks, collision checking, emergency-stop provisions, and controlled commissioning.
+
+## 12. Project Status
+
+**Status: Active Development**
+
+The prototype is currently undergoing LinuxCNC simulation testing, with further development focused on robotic integration and intelligent manufacturing applications.
+
+## 13. Author
+
+**Sagnik Mitra**
+
+Production Engineering | AI/ML | Robotics | Intelligent Manufacturing
+
+GitLab: [SagnikMitra023](https://gitlab.com/SagnikMitra023)
+
+---
+
+*This repository documents an ongoing engineering and research project exploring the convergence of Agentic AI, CNC machining, robotics, and intelligent manufacturing.*
